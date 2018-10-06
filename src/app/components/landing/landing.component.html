@@ -1,0 +1,21 @@
+<div class="centered-form">
+  <div class="centered-form__form">
+        <div class="form-field">
+            <h1>Whats the weather?</h1>
+        </div>
+        <div class="form-field">
+            <input
+                #location 
+                type="text" 
+                name="location" 
+                autofocus 
+                [placeholder]="defaultLocation"
+                (keyup.enter)="getForcast(location.value)"
+                />
+        </div>
+        <div class="form-field">
+            <button class="btn btn-outline-dark"
+                    (click)="getForcast(location.value)">Lets find out</button>
+        </div>
+  </div>
+</div>

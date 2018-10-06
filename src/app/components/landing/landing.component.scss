@@ -1,0 +1,32 @@
+.centered-form {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    background: url("../../imgs/bg-masthead.jpg");
+  }
+  
+  .centered-form__form {
+    padding: 0px 20px;
+    margin: 20px;
+  }
+  
+  .form-field {
+    margin: 20px 0;
+  }
+  
+  .form-field > * {
+    width: 100%;
+  }
+  
+  .form-field input, .form-field select {
+    // border: 1px solid #e1e1e1;
+    border:none;
+    background: none;
+    padding: 10px;
+  }
+
+  input:focus {
+    outline:none;
+}
