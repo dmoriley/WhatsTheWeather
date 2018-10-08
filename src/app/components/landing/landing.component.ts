@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  private defaultLocation = 'Toronto, CA';
+  defaultLocation = 'Toronto, CA';
 
   constructor(private router: Router, private scrubber: ScrubberService ) { }
 
