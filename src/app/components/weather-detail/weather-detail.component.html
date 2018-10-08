@@ -1,15 +1,29 @@
 <div class="background">
 
   <div class="container" *ngIf="forecast || badCity; else loading">
+
     <div *ngIf="forecast; else error">
       <h1 class="display-1 text-lowercase mb-3">{{city}}</h1>
+
       <div class="row mb-5">
           <weather-detail-item class="col" *ngFor="let i of forecast.days" [forecastData]="i"></weather-detail-item>
       </div>
+      
+      <div [ngClass]="{'visible': showMore, 'hidden': !showMore}">
+        <h5>average weekly pressure {{forecast.pressure | number:"1.2-2"}} hPa</h5>
+        <!-- 
+          future iteration could include a dj3 graph in this location in the more information section
+          <div>INSERT GRAPH HERE </div> 
+        -->
+      </div>
+
+      <div class="clickable text-center" (click)="toggleMore();">{{showMore ? 'less' : 'more'}}</div>
     </div>
+
     <ng-template #error>
       <p class="display-4">Woops, looks like {{city}} doesn't exist :/</p>
     </ng-template>
+
     <a [routerLink]="['/']" class="btn"><<</a>
   </div>
 
