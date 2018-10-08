@@ -12,7 +12,7 @@ export class WeatherService {
   constructor(private http: Http) { }
 
   getForcast(city:string) {
-    const query = `http://api.openweathermap.org/data/2.5/forecast?APPID=${this.apikey}&q=${city}`
+    const query = `https://api.openweathermap.org/data/2.5/forecast?APPID=${this.apikey}&q=${city}`
     return this.http.get(query).pipe(map(res => res.json()));
   }
 }
