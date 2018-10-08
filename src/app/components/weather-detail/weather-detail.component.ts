@@ -9,7 +9,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./weather-detail.component.scss']
 })
 export class WeatherDetailComponent implements OnInit {
-
+  city;
   data;
   forecast;
 
@@ -24,7 +24,7 @@ export class WeatherDetailComponent implements OnInit {
     }
     this.weatherService.getForcast(city).pipe(take(1)).subscribe(data => {
       this.data = data.list;
-
+      this.city = data.city.name;
       this.accumulateData();
 
     });
@@ -81,7 +81,6 @@ export class WeatherDetailComponent implements OnInit {
         }
 
       }
-      console.log(JSON.stringify(acc));
       return acc;
     },{pressure:0, days:[]}); 
   }

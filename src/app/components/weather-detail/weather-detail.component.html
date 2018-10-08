@@ -1,11 +1,10 @@
-<div class="container" *ngIf="forecast else loading">
-    <!-- <div *ngFor="let i of forecast">
-      Day: {{i.dt_txt | date}}
-    </div> -->
-    <div class="card-deck">
-    <!-- <div> -->
-      <weather-detail-item *ngFor="let i of forecast.days" [forecastData]="i"></weather-detail-item>
+<div class="background">
+  <div class="container" *ngIf="forecast else loading">
+    <h1 class="display-1 text-lowercase mb-3">{{city}}</h1>
+    <div class="row mb-5">
+        <weather-detail-item class="col" *ngFor="let i of forecast.days" [forecastData]="i"></weather-detail-item>
     </div>
+    <a [routerLink]="['/']" class="btn"><<</a>
 </div>
 
 <ng-template #loading>
@@ -13,3 +12,4 @@
     <div class="loader"></div>
   </div>
 </ng-template>
+</div>

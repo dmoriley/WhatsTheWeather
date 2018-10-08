@@ -1,9 +1,12 @@
 <div class="card">
   <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
   <div class="card-body">
-    <h5 class="card-title">{{forecastData.date | date}}</h5>
-    <p class="card-text">High: {{forecastData.high | temperature:"c":true}}</p>
-    <p class="card-text">Low: {{forecastData.low | temperature:"c":true}}</p>
+    <h5 class="card-title ">{{forecastData.date | date:"EEEE"}}</h5>
+    <p class="card-text high">{{forecastData.high | temperature:"c":true}}</p>
+    <p class="card-text low">{{forecastData.low | temperature:"c":true}}</p>
     <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
   </div>
-</div>
+  <div class="card-footer">
+    <small>{{forecastData.date | date:"MMM d"}}</small>
+  </div>
+</div >
