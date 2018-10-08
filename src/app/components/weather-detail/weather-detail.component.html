@@ -1,15 +1,22 @@
 <div class="background">
-  <div class="container" *ngIf="forecast else loading">
-    <h1 class="display-1 text-lowercase mb-3">{{city}}</h1>
-    <div class="row mb-5">
-        <weather-detail-item class="col" *ngFor="let i of forecast.days" [forecastData]="i"></weather-detail-item>
-    </div>
-    <a [routerLink]="['/']" class="btn"><<</a>
-</div>
 
-<ng-template #loading>
-  <div class="centered">
-    <div class="loader"></div>
+  <div class="container" *ngIf="forecast || badCity; else loading">
+    <div *ngIf="forecast; else error">
+      <h1 class="display-1 text-lowercase mb-3">{{city}}</h1>
+      <div class="row mb-5">
+          <weather-detail-item class="col" *ngFor="let i of forecast.days" [forecastData]="i"></weather-detail-item>
+      </div>
+    </div>
+    <ng-template #error>
+      <p class="display-4">Woops, looks like {{city}} doesn't exist :/</p>
+    </ng-template>
+    <a [routerLink]="['/']" class="btn"><<</a>
   </div>
-</ng-template>
+
+  <ng-template #loading>
+    <div class="centered">
+      <div class="loader"></div>
+    </div>
+  </ng-template>
+
 </div>
