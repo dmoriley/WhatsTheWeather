@@ -1,3 +1,4 @@
+import { TemperaturePipe } from './pipes/temperature.pipe';
 import { ScrubberService } from './services/scrubber-service/scrubber.service';
 import { WeatherService } from './services/weather-service/weather.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,8 @@ import { LandingComponent } from './components/landing/landing.component';
 import { WeatherDetailComponent } from './components/weather-detail/weather-detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { WeatherDetailItemComponent } from './components/weather-detail-item/weather-detail-item.component';
+
 
 const routes: Routes = [
   {
@@ -25,7 +28,9 @@ const routes: Routes = [
   declarations: [
     LandingComponent,
     WeatherDetailComponent,
-    AppComponent
+    AppComponent,
+    WeatherDetailItemComponent,
+    TemperaturePipe
   ],
   imports: [
     BrowserModule,

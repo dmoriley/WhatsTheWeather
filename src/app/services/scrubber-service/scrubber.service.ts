@@ -41,10 +41,8 @@ export class ScrubberService {
 }
 
 export interface ScrubberConfig {
-  exceptions: ScrubberConfigItem[]
-}
-
-export interface ScrubberConfigItem {
-  character: string,
-  amount: number
+  exceptions: [{
+    character: string,
+    amount:number
+  }]
 }
