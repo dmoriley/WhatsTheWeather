@@ -48,3 +48,22 @@ a.btn:visited {
 a.btn:hover {
   color: grey;
 }
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  height:auto;
+  transition: opacity 0.3s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  height:0;
+  overflow: hidden;
+  transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+.clickable {
+  cursor: pointer;
+}

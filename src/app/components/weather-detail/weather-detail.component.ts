@@ -13,6 +13,7 @@ export class WeatherDetailComponent implements OnInit {
   data;
   forecast;
   badCity = false;
+  showMore = false;
 
   constructor(private weatherService: WeatherService,
               private route: ActivatedRoute,
@@ -24,7 +25,6 @@ export class WeatherDetailComponent implements OnInit {
       this.router.navigate(['/']);
     }
     this.weatherService.getForcast(city).pipe(take(1)).subscribe(data => {
-      console.log(JSON.stringify(data));
       this.data = data.list;
       this.city = data.city.name;
       this.accumulateData();
@@ -33,6 +33,10 @@ export class WeatherDetailComponent implements OnInit {
       this.city = city;
       this.badCity =true; 
     });
+  }
+
+  toggleMore() {
+    this.showMore = !this.showMore;
   }
 
   /**
