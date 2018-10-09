@@ -25,7 +25,7 @@ export class ScrubberService {
       });
     }
     return value.toLowerCase().split('').map(val => {
-      if(val.match(/^[a-z]/)) {
+      if(val.match(/^[a-z]|\s/)) {
         return val;
       } else if(config) {
         const found = config.exceptions.find(val2 => val2.character === val);
