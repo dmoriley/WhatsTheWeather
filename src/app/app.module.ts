@@ -10,6 +10,7 @@ import { WeatherDetailComponent } from './components/weather-detail/weather-deta
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WeatherDetailItemComponent } from './components/weather-detail-item/weather-detail-item.component';
+import { ForecastChartComponent } from './components/forecast-chart/forecast-chart.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
     WeatherDetailComponent,
     AppComponent,
     WeatherDetailItemComponent,
-    TemperaturePipe
+    TemperaturePipe,
+    ForecastChartComponent
   ],
   imports: [
     BrowserModule,

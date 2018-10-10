@@ -2,6 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { WeatherService } from './../../services/weather-service/weather.service';
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { ForecastData } from '../../models/forecast-data.model';
 
 @Component({
   selector: 'app-weather-detail',
@@ -11,7 +12,7 @@ import { take } from 'rxjs/operators';
 export class WeatherDetailComponent implements OnInit {
   city;
   data;
-  forecast;
+  forecast: ForecastData;
   badCity = false;
   showMore = false;
 

@@ -11,10 +11,7 @@
       
       <div [ngClass]="{'visible': showMore, 'hidden': !showMore}">
         <h5>average weekly pressure {{forecast.pressure | number:"1.2-2"}} hPa</h5>
-        <!-- 
-          future iteration could include a dj3 graph in this location in the more information section
-          <div>INSERT GRAPH HERE </div> 
-        -->
+        <forecast-chart [forecast]="forecast"></forecast-chart>
       </div>
 
       <div class="clickable text-center" (click)="toggleMore();">{{showMore ? 'less' : 'more'}}</div>
